@@ -64,6 +64,11 @@ int main(int argc, char *argv[])
 				perror("client recv");
 				exit(1);
 			}
+			else if (0 == recbyte)
+			{
+				printf("client exit\n");
+				exit(0);
+			}
 			printf("client recv ok!\n");
 			recv_buf[recbyte] = '\0';
 			printf("%s\n", recv_buf);

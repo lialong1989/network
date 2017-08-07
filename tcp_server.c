@@ -77,6 +77,12 @@ int main(void)
 				perror("server recv");
 				exit(1);
 			}
+			else if (0 == recbyte)
+			{
+				printf("client exit\n");
+				close(nfp);
+				exit(0);
+			}
 			printf("server recv ok!\n");
 			recv_buf[recbyte] = '\0';
 			printf("%s\n", recv_buf);
